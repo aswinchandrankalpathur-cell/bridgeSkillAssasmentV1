@@ -6,11 +6,11 @@ form.addEventListener("submit", function (event) {
 
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
+    const contact = document.getElementById("contact").value.trim();
 
     document.getElementById("nameError").textContent = "";
     document.getElementById("emailError").textContent = "";
-    document.getElementById("phoneError").textContent = "";
+    document.getElementById("contactError").textContent = "";
 
     if (name.length < 3) {
         document.getElementById("nameError").textContent =
@@ -26,11 +26,12 @@ form.addEventListener("submit", function (event) {
         valid = false;
     }
 
-    const phonePattern = /^[0-9]{10}$/;
+        document.getElementById("contactError").textContent =
+     contactPattern = /^[0-9]{10}$/;
 
-    if (!phonePattern.test(phone)) {
-        document.getElementById("phoneError").textContent =
-            "Phone number must contain 10 digits.";
+    if (!contactPattern.test(contact)) {
+        document.getElementById("contactError").textContent =
+            "Contact number must contain 10 digits.";
         valid = false;
     }
 
