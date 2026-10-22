@@ -16,9 +16,9 @@ $password = "";
 
 
 
-$name = trim($_POST["name"] ?? "aswin");
-$email = trim($_POST["email"] ?? "aswinnnnn");
-$contact = trim($_POST["contact"] ?? "1234567890");
+$name = trim($_POST["name"] ?? "");
+$email = trim($_POST["email"] ?? "");
+$contact = trim($_POST["contact"] ?? "");
 
 
 $stmt = "INSERT INTO userdata (name, email, contact)
@@ -33,7 +33,7 @@ if (mysqli_query($conn, $stmt)) {
 } else {
 
     if (mysqli_errno($conn) == 1062) {
-        echo "<h2>This email is already registered.</h2>";
+        echo "<h2>Already registered.</h2>";
         echo '<a href="index.html">Register another user</a>';
     } else {
         echo "Database error: " . mysqli_error($conn);
